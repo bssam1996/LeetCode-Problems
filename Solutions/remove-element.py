@@ -28,7 +28,7 @@ def test_cases():
 
     ]
     for case in range(len(list_of_cases)):
-        output = removeElement2(list_of_cases[case]["s"], list_of_cases[case]["t"])
+        output = removeElement(list_of_cases[case]["s"], list_of_cases[case]["t"])
         result = (output == list_of_cases[case]["o"])
         print("#", case, result)
         if not result:
