@@ -23,6 +23,19 @@ def findKthPositive(arr, k):
         k -= 1
     return values[original_k-1]
 
+
+def findKthPositive2(arr, k):
+    list1 = []
+    last_element = arr[-1]
+    arr = set(arr)
+    num_elements = k
+    for i in range(1, last_element + k + 1):
+        if i not in arr:
+            num_elements -= 1
+            list1.append(i)
+        if num_elements == 0:
+            break
+    return list1[k - 1]
 #
 # arr = [2,3,4,7,11]
 # k = 5
@@ -36,4 +49,4 @@ def findKthPositive(arr, k):
 arr = [1,13,18]
 k = 17
 
-print(findKthPositive(arr, k))
+print(findKthPositive2(arr, k))
