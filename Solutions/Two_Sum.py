@@ -31,6 +31,16 @@ def two_sum2(nums, target):
         return [base_counter, numbers.get(second_number)["location"]]
     return []
 
+def two_sum3(nums, target):
+    seen = {}
+    for i, value in enumerate(nums):
+        remaining = target - nums[i]
+
+        if remaining in seen:
+            return [i, seen[remaining]]
+
+        seen[value] = i
+    return []
 
 nums = [3,2,4]
 target = 6
